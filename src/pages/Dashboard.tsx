@@ -28,8 +28,8 @@ const initialSummary: TransactionSummary = {
 };
 
 interface ChartLabelProps {
-  categoryName: string;
-  percent: number;
+  name?: string;
+  percent?: number;
 }
 
 const Dashboard = () => {
@@ -60,12 +60,12 @@ const Dashboard = () => {
   },[month, year]);
 
 
-  const renderPieChartLabel = ({categoryName, percent}: ChartLabelProps): string => {
-    return `${categoryName}: ${(percent * 100).toFixed(1)}%`;
+  const renderPieChartLabel = ({name, percent}: ChartLabelProps): string => {
+    return `${name ?? ""}: ${((percent ?? 0) * 100).toFixed(1)}%`;
   };
   
-  const formatToolTipValue = (value: number | string): string => {
-    return formatCurrency (typeof value === "number" ? value : 0 );
+  const formatToolTipValue = (value: number | string | readonly (number | string)[] | undefined): string => {
+    return formatCurrency(typeof value === "number" ? value : 0);
   };
 
   return (  
