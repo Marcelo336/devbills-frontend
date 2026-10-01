@@ -2,7 +2,7 @@ import axios, { type AxiosInstance, type InternalAxiosRequestConfig } from "axio
 import { firebaseAuth } from "../config/firebase";
 
 export const api: AxiosInstance = axios.create({
-  baseURL: import.meta.env.PUBLIC_API_URL,
+  baseURL: `${import.meta.env.PUBLIC_API_URL}/api`,
   timeout: 10000,
 });
 
