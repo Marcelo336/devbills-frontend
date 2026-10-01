@@ -3,7 +3,7 @@ import { api } from "./api";
 
 export const getCategories = async (): Promise<Category[]> =>  {
   try {
-    const response = await api.get<{ categories: Category[] }>("/categories")
+    const response = await api.get<{ categories: Category[] }>("/categories");
     console.log("DEBUG: Resposta da API de Categorias:", response.data);
     return response.data.categories;
   } catch(err) {

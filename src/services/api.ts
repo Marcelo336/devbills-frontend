@@ -1,8 +1,10 @@
 import axios, { type AxiosInstance, type InternalAxiosRequestConfig } from "axios";
 import { firebaseAuth } from "../config/firebase";
 
+const BACKEND_BASE_URL = 'https://devbills-backend-bxzr.onrender.com/api';
+
 export const api: AxiosInstance = axios.create({
-  baseURL: `${import.meta.env.PUBLIC_API_URL}/api`,
+  baseURL: BACKEND_BASE_URL,
   timeout: 10000,
 });
 
